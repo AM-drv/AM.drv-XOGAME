@@ -9,7 +9,7 @@ But this step made me learn how to modify simple things in the code such as colo
 And also create and host an html file
 Now I have learned how to create an html file, which took me 2 hours to write the code 
 Because I didn't understand how it was created at first until it turned out that the reason was that I had to add(.)
-My mistake was that I write the file after formatting like this 👇
+My mistake was that I write the file after formatting like this =
 Usernamehtml
 And the right is 👉 Username.html
 What made me laugh is that I try for 2 hours and it didn't work until I knew my mistake
