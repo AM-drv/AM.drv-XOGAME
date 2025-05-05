@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XO-game</title>
+</head>
+<body style="background:#000;color:#fff;text-align:center">
+  <h3>Created by: AM-drv</h3>
+  <h4 id="winner"></h4>
+  <div id="b"></div>
+  <button onclick="start()">Restart</button>
+  <script>
+    let t='X',b=document.getElementById('b'),w=document.getElementById('winner');
+    function start(){
+      b.innerHTML='';w.textContent='';t='X';
+      for(let i=0;i<9;i++){
+        let c=document.createElement('button');
+        c.style="width:60px;height:60px;font-size:30px;margin:2px;background:#111;border:none;cursor:pointer";
+        c.onclick=()=>{
+          if(!c.textContent && !w.textContent){
+            c.textContent=t;
+            c.style.color=t=='X'?'red':'blue';
+            checkWin();
+            t=t=='X'?'O':'X';
+          }
+        };
+        b.appendChild(c);
+        if(i%3==2)b.appendChild(document.createElement('br'));
+      }
+    }
+    function checkWin(){
+      let cells = b.querySelectorAll('button');
+      let wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+      for(let i of wins){
+        let [a,b,c]=i;
+        if(cells[a].textContent && cells[a].textContent==cells[b].textContent && cells[b].textContent==cells[c].textContent){
+          w.textContent = cells[a].textContent + ' wins!';
+          break;
+        }
+      }
+    }
+    start();
+  </script>
+</body>
+</html>
